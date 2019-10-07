@@ -1,3 +1,14 @@
-import PatternManagero from './PatternManager'
+import PatternManager from './PatternManager'
+import ProgressionChordOptions from './ProgressionChordOptions'
+import ProgressionPatternOptions from './ProgressionPatternOptions'
+import ProgressionWorkbench from './ProgressionWorkbench'
+import ChordBuilder from './ChordBuilder'
 
-export const PatternManager = PatternManagero
+
+export default {
+  PatternManager,
+  ProgressionChordOptions,
+  ProgressionPatternOptions,
+  ProgressionWorkbench,
+  ChordBuilder
+}

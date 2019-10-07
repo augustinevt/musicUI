@@ -3,11 +3,25 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.PatternManager = void 0;
+exports["default"] = void 0;
 
 var _PatternManager = _interopRequireDefault(require("./PatternManager"));
 
+var _ProgressionChordOptions = _interopRequireDefault(require("./ProgressionChordOptions"));
+
+var _ProgressionPatternOptions = _interopRequireDefault(require("./ProgressionPatternOptions"));
+
+var _ProgressionWorkbench = _interopRequireDefault(require("./ProgressionWorkbench"));
+
+var _ChordBuilder = _interopRequireDefault(require("./ChordBuilder"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var PatternManager = _PatternManager["default"];
-exports.PatternManager = PatternManager;
+var _default = {
+  PatternManager: _PatternManager["default"],
+  ProgressionChordOptions: _ProgressionChordOptions["default"],
+  ProgressionPatternOptions: _ProgressionPatternOptions["default"],
+  ProgressionWorkbench: _ProgressionWorkbench["default"],
+  ChordBuilder: _ChordBuilder["default"]
+};
+exports["default"] = _default;

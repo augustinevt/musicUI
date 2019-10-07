@@ -23,7 +23,8 @@
   },
   "homepage": "",
   "peerDependencies": {
-    "react": "^16.9.0"
+    "react": "^16.9.0",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -34,8 +35,5 @@
     "jest": "^24.9.0",
     "np": "^5.0.3",
     "watch": "^1.0.2"
-  },
-  "dependencies": {
-    "styled-components": "^4.4.0"
   }
 }

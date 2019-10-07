@@ -4,10 +4,8 @@ import Cell from './Cell';
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  border: solid;
-  margin: 10px;
+  /* border: solid; */
   display: flex;
-  width: 60%;
 `
 
 class PatternManager extends React.Component {
@@ -20,7 +18,8 @@ class PatternManager extends React.Component {
       isDrag: false,
       id: 'vow',
       val: '',
-      cells: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+      // cells: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+      cells: [0,0,0,0,0,0,0,0]
     };
 
     this.onClick = this.onClick.bind(this);
@@ -50,10 +49,12 @@ class PatternManager extends React.Component {
   }
 
   mouseUp() {
+    const newCells = [...this.state.cells];
+
     if (!this.state.isDrag) {
 
-      const newCells = [...this.state.cells];
       newCells[this.state.id] = (this.state.val === 2 || this.state.val === 0) ? 1 : 0;
+
       this.setState({cells: newCells, mouseDown: false})
 
     } else {
@@ -61,7 +62,42 @@ class PatternManager extends React.Component {
       this.setState({...this.state, mouseDown: false, isDrag: false})
     }
 
-    this.props.handler(this.state.cells)
+
+      const exportVal = [];
+
+      console.log(exportVal)
+
+      const measures = 4;
+      const beatsPerMeasure = 4;
+
+        for (let i = 0; i < newCells.length; i++) {
+          if (newCells[i] === 2) {
+            let beats = 0;
+            const event = {
+              time: `:0:${i*2}`
+            }
+
+            while(newCells[i] === 2) {
+              i++
+              beats += 2
+            }
+
+            event.duration = `0:0:${beats}`
+
+            exportVal.push(event)
+
+          } else if (newCells[i] === 1) {
+
+            const event = {
+              time: `:0:${i*2}`,
+              duration: `0:0:2`
+            }
+            exportVal.push(event)
+          }
+        }
+
+      this.props.handler(exportVal)
+
   }
 
   mouseLeave(i, val) {

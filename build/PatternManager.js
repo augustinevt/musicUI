@@ -46,7 +46,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  border: solid;\n  margin: 10px;\n  display: flex;\n  width: 60%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  /* border: solid; */\n  display: flex;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -75,7 +75,8 @@ function (_React$Component) {
       isDrag: false,
       id: 'vow',
       val: '',
-      cells: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      // cells: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+      cells: [0, 0, 0, 0, 0, 0, 0, 0]
     };
     _this.onClick = _this.onClick.bind(_assertThisInitialized(_this));
     _this.onDragOver = _this.onDragOver.bind(_assertThisInitialized(_this));
@@ -116,9 +117,9 @@ function (_React$Component) {
   }, {
     key: "mouseUp",
     value: function mouseUp() {
-      if (!this.state.isDrag) {
-        var newCells = _toConsumableArray(this.state.cells);
+      var newCells = _toConsumableArray(this.state.cells);
 
+      if (!this.state.isDrag) {
         newCells[this.state.id] = this.state.val === 2 || this.state.val === 0 ? 1 : 0;
         this.setState({
           cells: newCells,
@@ -131,7 +132,35 @@ function (_React$Component) {
         }));
       }
 
-      this.props.handler(this.state.cells);
+      var exportVal = [];
+      console.log(exportVal);
+      var measures = 4;
+      var beatsPerMeasure = 4;
+
+      for (var i = 0; i < newCells.length; i++) {
+        if (newCells[i] === 2) {
+          var beats = 0;
+          var event = {
+            time: ":0:".concat(i * 2)
+          };
+
+          while (newCells[i] === 2) {
+            i++;
+            beats += 2;
+          }
+
+          event.duration = "0:0:".concat(beats);
+          exportVal.push(event);
+        } else if (newCells[i] === 1) {
+          var _event = {
+            time: ":0:".concat(i * 2),
+            duration: "0:0:2"
+          };
+          exportVal.push(_event);
+        }
+      }
+
+      this.props.handler(exportVal);
     }
   }, {
     key: "mouseLeave",

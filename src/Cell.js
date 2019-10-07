@@ -8,7 +8,8 @@ const Cello = styled.div`
     else if (cellVal === 1) return 'orange'
     else return 'grey'
   }};
-  width: 2.8%;
+  /* width: 2.8%; */
+  width: 20px;
   height: 20px;
   margin: 0.3%;
 `

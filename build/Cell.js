@@ -12,7 +12,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  border-radius: 10%;\n  background: ", ";\n  width: 2.8%;\n  height: 20px;\n  margin: 0.3%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  border-radius: 10%;\n  background: ", ";\n  /* width: 2.8%; */\n  width: 20px;\n  height: 20px;\n  margin: 0.3%;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
