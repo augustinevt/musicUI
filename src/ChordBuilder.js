@@ -20,7 +20,7 @@ const ButtonWrapper = styled.div`
   display: flex;
   width: 100%;
   padding: 10px;
-  border: solid;
+  /* border: solid; */
 `
 
 import SymbolButton from './SymbolButton'

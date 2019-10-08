@@ -46,7 +46,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  /* border: solid; */\n  display: flex;\n"]);
+  var data = _taggedTemplateLiteral(["\n  /* border: solid; */\n  display: flex;\n  width: 100%;\n  justify-content: center;\n\n"]);
 
   _templateObject = function _templateObject() {
     return data;

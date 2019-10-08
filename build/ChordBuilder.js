@@ -26,7 +26,7 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  padding: 10px;\n  border: solid;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  padding: 10px;\n  /* border: solid; */\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;

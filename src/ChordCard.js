@@ -4,13 +4,79 @@ import styled from 'styled-components'
 import ChordBuilder from './ChordBuilder'
 
 const Wrapper = styled.div`
-  border: solid;
-  color: ${props => props.active ? 'red' : 'grey'};
+  width: 100%;
+  margin-bottom: 10px;
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-wrap: no-wrap;
 `
 
 const ChordMenu = styled.div`
+  display: flex;
+`
+
+const RemCol = styled.div`
+  display: flex;
+  /* border: solid; */
+  flex-wrap: wrap;
+  width: 20px;
+`
+const ChordCol = styled.div`
+  display: flex;
+  /* border: solid; */
+  flex-wrap: wrap;
+  width: 100%;
+`
+
+const Row = styled.div`
+  width: 100%;
+  display: flex;
+  /* border: solid; */
+`
+
+const Button = styled.div`
+  border: 1px solid orange;
+  margin-bottom: 5px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const AddButton = styled.div`
+  /* position: absolute; */
+  border: 1px solid orange;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+`
+
+const AddButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  /* padding-right: 20px; */
+  /* border: solid; */
+`
+
+const ButtonWrapper = styled.div`
+  padding-left: 5px;
+`
+
+const Card = styled.div`
+  padding: 30px;
+  position: relative;
+  width: 100%;
   border: solid;
-  /* height: 100px; */
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  color: ${props => props.active ? 'rgba(255, 103, 0, 1)' : 'rgba(255, 103, 0, .5)' };
 `
 
 
@@ -23,10 +89,9 @@ export default ({chordName, active, getKeyChords, changeChord, addChord, removeC
 
   let chordMenu = null;
 
-  console.log('-> ->', active)
-
   if (inKeyOnly) {
     const ChordSelection = getKeyChords()
+
     chordMenu = Object.keys(ChordSelection).map( chordName => {
       const params = {name: chordName, index, notes: ChordSelection[chordName] }
       const onClick = () => {
@@ -41,32 +106,57 @@ export default ({chordName, active, getKeyChords, changeChord, addChord, removeC
   } else {
 
       const handler = (chordName) => {
-          const params = {name: chordName, index }
-          toggleChange(false)
-          toggleAdd(false)
-          changeOpen ? changeChord(params) : addChord(params)
+        const params = {name: chordName, index }
+        toggleChange(false)
+        toggleAdd(false)
+        changeOpen ? changeChord(params) : addChord(params)
       }
 
       chordMenu = <ChordBuilder handler={handler} />
   }
 
   return (
-    <Wrapper active={active}>
-      {chordName}
-      <button onClick={()=> removeChord(index)}> Remove </button>
-      <button onClick={()=> toggleInKeyOnly(!inKeyOnly)}> In Key only </button>
+    <Wrapper>
 
-      {
-        !changeOpen && !addOpen ?
-          <div>
-            <button onClick={()=>toggleChange(true)}> Change </button>
-            <button onClick={()=>toggleAdd(true)}> Add </button>
-          </div>
-        :
-          <ChordMenu>
-            {chordMenu}
-          </ChordMenu>
-      }
+        <ChordCol>
+          <Row>
+
+            <Card active={active}>
+              {chordName}
+
+              {
+                !changeOpen && !addOpen ?
+                  null
+                :
+                  <ChordMenu>
+                    <Button onClick={()=> toggleInKeyOnly(!inKeyOnly)}> In Key only </Button>
+                    {chordMenu}
+                  </ChordMenu>
+              }
+
+            </Card>
+
+          </Row>
+
+          <Row>
+            {
+              !changeOpen && !addOpen ?
+                <AddButtonWrapper>
+                  <AddButton onClick={()=>toggleAdd(true)}> A </AddButton>
+                </AddButtonWrapper>
+              :
+                null
+            }
+          </Row>
+        </ChordCol>
+
+        <RemCol>
+          <ButtonWrapper>
+            <Button onClick={()=> removeChord(index)}> x </Button>
+            <Button onClick={()=>toggleChange(true)}> p </Button>
+          </ButtonWrapper>
+        </RemCol>
+
 
     </Wrapper>
   )

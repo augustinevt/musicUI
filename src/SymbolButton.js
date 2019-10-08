@@ -6,8 +6,7 @@ const Wrapper = styled.div`
 `
 const Button = styled.div`
   margin: 4px;
-  border: .5px solid ${ ({active}) => (active) ? "red" : "blue"};
-
+  color: ${ ({active}) => (active) ? "red" : "blue"};
 `
 
 export default ({sym, handler, active}) => {

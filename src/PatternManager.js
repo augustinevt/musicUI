@@ -6,6 +6,9 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   /* border: solid; */
   display: flex;
+  width: 100%;
+  justify-content: center;
+
 `
 
 class PatternManager extends React.Component {

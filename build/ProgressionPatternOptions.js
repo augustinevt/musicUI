@@ -14,7 +14,7 @@ var _PatternManager = _interopRequireDefault(require("./PatternManager"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  /* border: solid; */\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -30,10 +30,8 @@ var Wrapper = _styledComponents["default"].div(_templateObject());
 var _default = function _default(_ref) {
   var chords = _ref.chords,
       onChange = _ref.onChange;
-  console.log(chords);
   return _react["default"].createElement(Wrapper, null, _react["default"].createElement(_PatternManager["default"], {
     handler: function handler(cells) {
-      console.log(cells);
       onChange(cells);
     }
   }));

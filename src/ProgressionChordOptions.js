@@ -7,11 +7,14 @@ const Button = styled.button`
 
 const Select = styled.select`
   border: solid;
-  width: 100px;
+  /* width: 100%; */
 `
 
 const Wrapper = styled.div`
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 `
 
 export default ({onKeyChange, onModeChange, onTempoChange, onSubmit}) => {
