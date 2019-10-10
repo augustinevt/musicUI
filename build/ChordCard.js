@@ -26,7 +26,7 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  padding: 30px;\n  position: relative;\n  width: 100%;\n  border: solid;\n  margin-bottom: 10px;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 30px;\n  position: relative;\n  width: 100%;\n  border: solid;\n  margin-bottom: 5px;\n  display: flex;\n  justify-content: center;\n  color: ", ";\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -36,7 +36,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  padding-left: 5px;\n"]);
+  var data = _taggedTemplateLiteral(["\n\n  position: absolute;\n  right: -25px;\n  /* padding-left: 5px; */\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -116,7 +116,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin-bottom: 10px;\n  /* border: 1px solid blue; */\n  display: flex;\n  flex-wrap: no-wrap;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin-bottom: 10px;\n  /* border: 1px solid blue; */\n  display: flex;\n  flex-wrap: no-wrap;\n  position: relative;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -220,7 +220,7 @@ var _default = function _default(_ref) {
     onClick: function onClick() {
       return toggleAdd(true);
     }
-  }, " A ")) : null)), _react["default"].createElement(RemCol, null, _react["default"].createElement(ButtonWrapper, null, _react["default"].createElement(Button, {
+  }, " A ")) : null)), _react["default"].createElement(ButtonWrapper, null, _react["default"].createElement(Button, {
     onClick: function onClick() {
       return removeChord(index);
     }
@@ -228,7 +228,7 @@ var _default = function _default(_ref) {
     onClick: function onClick() {
       return toggleChange(true);
     }
-  }, " p "))));
+  }, " p ")));
 };
 
 exports["default"] = _default;

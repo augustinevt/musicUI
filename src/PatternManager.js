@@ -4,11 +4,10 @@ import Cell from './Cell';
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  /* border: solid; */
   display: flex;
   width: 100%;
-  justify-content: center;
-
+  justify-content: space-between;
+  margin-bottom: 8%;
 `
 
 class PatternManager extends React.Component {

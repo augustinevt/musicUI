@@ -3,6 +3,8 @@ import ProgressionChordOptions from './ProgressionChordOptions'
 import ProgressionPatternOptions from './ProgressionPatternOptions'
 import ProgressionWorkbench from './ProgressionWorkbench'
 import ChordBuilder from './ChordBuilder'
+import GenerateButton from './GenerateButton'
+
 
 
 export default {
@@ -10,5 +12,6 @@ export default {
   ProgressionChordOptions,
   ProgressionPatternOptions,
   ProgressionWorkbench,
+  GenerateButton,
   ChordBuilder
 }

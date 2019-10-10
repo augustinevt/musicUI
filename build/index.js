@@ -15,6 +15,8 @@ var _ProgressionWorkbench = _interopRequireDefault(require("./ProgressionWorkben
 
 var _ChordBuilder = _interopRequireDefault(require("./ChordBuilder"));
 
+var _GenerateButton = _interopRequireDefault(require("./GenerateButton"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = {
@@ -22,6 +24,7 @@ var _default = {
   ProgressionChordOptions: _ProgressionChordOptions["default"],
   ProgressionPatternOptions: _ProgressionPatternOptions["default"],
   ProgressionWorkbench: _ProgressionWorkbench["default"],
+  GenerateButton: _GenerateButton["default"],
   ChordBuilder: _ChordBuilder["default"]
 };
 exports["default"] = _default;

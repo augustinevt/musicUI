@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   /* border: 1px solid blue; */
   display: flex;
   flex-wrap: no-wrap;
+  position: relative;
 `
 
 const ChordMenu = styled.div`
@@ -65,7 +66,10 @@ const AddButtonWrapper = styled.div`
 `
 
 const ButtonWrapper = styled.div`
-  padding-left: 5px;
+
+  position: absolute;
+  right: -25px;
+  /* padding-left: 5px; */
 `
 
 const Card = styled.div`
@@ -73,13 +77,11 @@ const Card = styled.div`
   position: relative;
   width: 100%;
   border: solid;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: center;
   color: ${props => props.active ? 'rgba(255, 103, 0, 1)' : 'rgba(255, 103, 0, .5)' };
 `
-
-
 
 export default ({chordName, active, getKeyChords, changeChord, addChord, removeChord, index}) => {
 
@@ -150,12 +152,12 @@ export default ({chordName, active, getKeyChords, changeChord, addChord, removeC
           </Row>
         </ChordCol>
 
-        <RemCol>
+
           <ButtonWrapper>
             <Button onClick={()=> removeChord(index)}> x </Button>
             <Button onClick={()=>toggleChange(true)}> p </Button>
           </ButtonWrapper>
-        </RemCol>
+
 
 
     </Wrapper>
